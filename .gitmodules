@@ -1,0 +1,3 @@
+[submodule "Suma"]
+	path = Suma
+	url = https://github.com/suma-project/Suma.git
