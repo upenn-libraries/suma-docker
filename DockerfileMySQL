@@ -1,0 +1,2 @@
+FROM mysql:8.0.3
+MAINTAINER Jeremy Nelson <jermnelson@gmail.com>
