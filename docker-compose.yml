@@ -1,0 +1,14 @@
+suma:
+  build: .
+  ports:
+    - 80:80
+    - 19679:19679
+  links:
+    - mysql:mysql
+
+mysql:
+  build: .
+  dockerfile: DockerfileMySQL
+  volumes:
+   - /opt/db:/opt/db
+

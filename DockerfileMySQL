@@ -1,2 +1,5 @@
-FROM mysql:8.0.3
+FROM mysql:5.5
 MAINTAINER Jeremy Nelson <jermnelson@gmail.com>
+ENV CONF /etc/mysql/
+COPY init.sql /docker-entrypoint-initdb.d/.
+COPY Suma/service/config/schema.sql /docker-entrypoint-init.db/. 
