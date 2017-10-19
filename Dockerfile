@@ -9,14 +9,17 @@ ADD Suma $HOME/suma
 #    ln -s $HOME/service/web/ /var/www/htdocs/sumaserver/ && \
 #    ln -s $HOME/web/ /var/www/htdocs/suma/client/ && \
 #    ln -s $HOME/analysis/ /var/www/htdocs/suma/analysis/
-RUN cd /var/www && ls -ltra 
+
 RUN cd /var/www/html && mkdir suma && mkdir sumaserver && \
     cd suma && mkdir web && mkdir analysis && \
-    cp -r $HOME/suma/web /var/www/html/suma/web  && \
-    cp -r $HOME/suma/analysis /var/www/html/suma/analysis && \
+    cp -r $HOME/suma/web /var/www/html/suma/  && \
+    cp -r $HOME/suma/analysis /var/www/html/suma/ && \
     cp -r $HOME/suma/service/* /var/www/html/sumaserver/ && \
     cp $HOME/suma/service/web/htaccess_example /var/www/html/sumaserver/.htaccess && \
     cp $HOME/suma/service/web/index.php /var/www/html/sumaserver/index.php
-
+#COPY config/web-config.yaml /var/www/html/sumaserver/config/config.yaml
+COPY config/web-config.yaml $HOME/suma/service/web/config/config.yaml
+COPY config/server-config.yaml $HOME/suma/service/config/config.yaml
 EXPOSE 80
+EXPOSE 19679
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
