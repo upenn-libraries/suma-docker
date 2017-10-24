@@ -9,6 +9,9 @@ suma:
 mysql_db:
   build: .
   dockerfile: DockerfileMySQL
+  env_file: .env
+  environment:
+   - MYSQL_HOST=
   volumes:
    - /opt/db:/opt/db
 
