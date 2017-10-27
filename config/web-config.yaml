@@ -13,9 +13,9 @@
 #  to see more verbose error messages. This should generally be set to `false`.
 
 # Path Configuration
-SUMA_SERVER_PATH: /var/www/app/sumaserver
-SUMA_CONTROLLER_PATH: /var/www/app/sumaserver/controllers
+SUMA_SERVER_PATH: /var/www/app/Suma/service
+SUMA_CONTROLLER_PATH: /var/www/app/Suma/service/controllers
 SUMA_BASE_URL: /sumaserver
 
 # Debug mode
-SUMA_DEBUG: false
+SUMA_DEBUG: true
