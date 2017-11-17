@@ -1,8 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04.5
 MAINTAINER Jeremy Nelson <jermnelson@gmail.com>, Jon Driscoll <jdriscoll@coloradocollege.edu>
 ENV HOME /var/www/app
-RUN apt-get update && apt-get install -y apache2 apache2-dev git python-mysqldb libapache2-mod-php
-RUN apt-get install -y php php-mcrypt php-mysql 
+RUN apt-get update
+RUN apt-get install -y apache2 apache2-dev git python-mysqldb
+RUN apt-get install -y php5 php5-mysql php5-curl
 
 ADD Suma $HOME/Suma
 RUN cd $HOME/Suma && \

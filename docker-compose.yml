@@ -14,4 +14,3 @@ mysql_db:
    - MYSQL_HOST=
   volumes:
    - /opt/db:/opt/db
-
