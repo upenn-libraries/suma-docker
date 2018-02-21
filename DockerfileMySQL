@@ -1,7 +1,7 @@
 FROM mysql:5.5
 MAINTAINER Jeremy Nelson <jermnelson@gmail.com>
 ENV CONF /etc/mysql/
-COPY config/init.sql /docker-entrypoint-initdb.d/init.sql
+# COPY config/init.sql /docker-entrypoint-initdb.d/init.sql
 COPY Suma/service/config/schema.sql /docker-entrypoint-initdb.d/schema.sql
 ENTRYPOINT ["docker-entrypoint.sh"]
 EXPOSE 3306

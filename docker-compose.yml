@@ -13,4 +13,4 @@ mysql_db:
   environment:
    - MYSQL_HOST=
   volumes:
-   - /opt/db:/opt/db
+   - ./mountpoints/db:/opt/db
