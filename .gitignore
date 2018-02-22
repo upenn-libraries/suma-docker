@@ -2,3 +2,5 @@
 init.sql
 server-config.yaml
 *env
+docker_backups
+.directory

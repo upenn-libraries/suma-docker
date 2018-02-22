@@ -5,7 +5,7 @@ services:
     container_name: suma_web
     build:
       context: .
-      dockerfile: Dockerfile-suma
+      dockerfile: dockerfiles/Dockerfile-suma
     ports:
       - 80:80
       - 19679:19679
@@ -14,7 +14,7 @@ services:
     container_name: suma_mysql
     build:
       context: .
-      dockerfile: Dockerfile-mysql
+      dockerfile: dockerfiles/Dockerfile-mysql
     env_file: .env
     ports:
         - 3306:3306

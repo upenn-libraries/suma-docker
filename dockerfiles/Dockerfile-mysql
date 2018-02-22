@@ -1,10 +1,10 @@
-FROM mysql:5.5
+FROM mysql:5.7
 MAINTAINER Jeremy Nelson <jermnelson@gmail.com>
 
 ENV CONF /etc/mysql/
 
 # This can be schema.sql for production, or schema_w_sample.sql to prepopulate example data:
-COPY Suma/service/config/schema.sql /docker-entrypoint-initdb.d/schema_w_sample.sql
+COPY Suma/service/config/schema.sql /docker-entrypoint-initdb.d/schema.sql
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
