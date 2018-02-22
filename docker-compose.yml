@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: dockerfiles/Dockerfile-mysql
-    env_file: config/mysql_authentication_variables.env
+    env_file: ./config/mysql.env
     ports:
         - 3306:3306
     volumes:
