@@ -7,6 +7,7 @@ RUN apt-get install -y php7.0 php7.0-mysql php7.0-curl
 RUN apt-get install -y libapache2-mod-php7.0 libapache2-mod-php
 RUN a2enmod php7.0
 RUN a2enmod rewrite
+RUN phpenmod pdo_mysql
 
 # What's below follows the order of installation instructions at
 # https://suma-project.github.io/Suma/installation/#suma-install-instructions
