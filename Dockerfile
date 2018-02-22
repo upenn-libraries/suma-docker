@@ -34,6 +34,8 @@ COPY ./config/spaceassessConfig.js /var/www/app/sumaserver/web/config/spaceasses
 
 COPY ./config/analysis-config.yaml /var/www/html/suma/analysis/config/config.yaml
 
+COPY ./config/apache-configuration.conf /etc/apache2/sites-enabled/000-default.conf
+
 # Note that a crontab can be set up at this point, following
 # https://suma-project.github.io/Suma/installation/#suma-analysis-tools-configuration,
 # to send nightly emails.
