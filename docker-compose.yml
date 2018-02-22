@@ -18,5 +18,3 @@ services:
     env_file: ./config/mysql.env
     ports:
         - 3306:3306
-    volumes:
-     - ./mountpoints/db:/opt/db
