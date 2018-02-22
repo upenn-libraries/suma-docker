@@ -14,7 +14,7 @@
 
 # Path Configuration
 SUMA_SERVER_PATH: /var/www/app/sumaserver
-SUMA_CONTROLLER_PATH: /var/www/app/sumaserver/controllers
+SUMA_CONTROLLER_PATH: /var/www/app/sumaserver/service/controllers
 SUMA_BASE_URL: /sumaserver
 
 # Debug mode
