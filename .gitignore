@@ -1,6 +1,6 @@
 *swp
 init.sql
 server-config.yaml
-*env
+mysql_authentication_variables.env
 docker_backups
 .directory
