@@ -29,7 +29,7 @@ docker exec suma_mysql mysqldump -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQ
 1. Similarly, container data can be restored with the following:  
 ```sh
 source config/mysql.env
-cat docker_backups/2018.02.22.12.37/mysql_database/backup.sql | docker exec -i suma_mysql /usr/bin/mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
+cat backup.sql | docker exec -i suma_mysql /usr/bin/mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
 ```
 1. To access Suma:
 	1. The Administration interface is at http://localhost/sumaserver/admin/login.  

@@ -1,4 +1,6 @@
 production:
     cookie_path: /sumaserver
-    cookie_secure: false
-    cookie_httpOnly: false
+    cookie_secure: false  # Set this to false if you are using an http (vs. https) connection.
+        # (Faling to do so will result in being returned to the admin. login page whenever trying
+        # to click on a link in the admin. interface.)
+    cookie_httpOnly: true
