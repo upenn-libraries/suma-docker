@@ -31,12 +31,12 @@ The files in this repository use `docker-compose` version 3+. See [here](https:/
     2. If detached, you can use `docker-compose down`.  
 	   Volume data should persist across times you bring the containers up or down. If you would like to wipe the container data, you can use `docker-compose down --volumes`.
 1. To get a shell with the html container, you can use `docker exec -i -t suma_web /bin/bash`.
-1. To back up container data (e.g., from the `MySQL` container), you can use  
+1. To back up container data (e.g., from the `MySQL` container), you can use (while the `suma_mysql` container is running)  
 ```sh
 source config/mysql.env
 docker exec suma_mysql mysqldump -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE > backup.sql 2>backup_errors
 ```
-1. Similarly, container data can be restored with the following:  
+1. Similarly, container data can be restored with the following (while the `suma_mysql` container is running):  
 ```sh
 source config/mysql.env
 cat backup.sql | docker exec -i suma_mysql /usr/bin/mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE
