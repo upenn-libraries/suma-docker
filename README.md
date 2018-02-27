@@ -1,6 +1,6 @@
 # Dockerized Suma
 
-This repository bundles [Suma](https://github.com/suma-project/Suma), a 
+This repository bundles [Suma](https://github.com/suma-project/Suma), a webapp for facilitating performing head-counts in libraries, in a network of Docker containers, allowing it to be deployed with a single command (`docker-compose up`).
 
 Suma's documentation can be found [here](https://suma-project.github.io/Suma/).
 
