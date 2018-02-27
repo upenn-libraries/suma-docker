@@ -1,4 +1,4 @@
 production:
     cookie_path: /sumaserver
-    cookie_secure: true
-    cookie_httpOnly: true
+    cookie_secure: false
+    cookie_httpOnly: false
