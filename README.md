@@ -44,8 +44,8 @@ cat backup.sql | docker exec -i suma_mysql /usr/bin/mysql -u $MYSQL_USER --passw
 1. To access Suma:
 	1. The Administration interface is at http://localhost/sumaserver/admin/login.  
 	   The login credentials are set in `config/server-config.yaml` in the `admin` section.
-	1. The data entry interface is at http://localhost/suma/.
-	1. The analytics interface is at http://localhost/suma/analysis/.
+	1. The data entry interface is at http://localhost/suma/web.
+	1. The analytics interface is at http://localhost/suma/analysis/reports/.
 
 ## License
 
