@@ -10,6 +10,16 @@ The files in this repository use `docker-compose` version 3+. See [here](https:/
 
 ## Configuration
 
+1. Clone this repository along with its `Suma` submodule with `git clone --recurse-submodules https://github.com/USERNAME/suma-docker` (where `USERNAME`) is replaced to match whatever fork of this repository you're using.
+1. This Docker repository requires one minor change to be made to Suma itself, for the `zend` dependency that ships with it to work:  
+   In `service/web/index.php`, replace  
+	   ```php
+	   ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . $SUMA_SERVER_PATH . PATH_SEPARATOR . $SUMA_SERVER_PATH . '/lib/zend/library');
+       ```
+       with
+	   ```php
+	   ini_set('include_path', ini_get('include_path') . PATH_SEPARATOR . $SUMA_SERVER_PATH . '/service' . PATH_SEPARATOR . $SUMA_SERVER_PATH . '/service/lib/zend/library');
+   	   ```
 1. In the `config` directory:
 	1. Copy `analysis-config_TEMPALTE.yaml` to `analysis-config.yaml`.
 	2. Copy `mysql_TEMPLATE.env` to `mysql.env`.
