@@ -9,6 +9,8 @@ services:
     ports:
       - 80:80
       - 19679:19679
+    environment:
+       TZ: America/New_York
 
   mysql_db:
     container_name: suma_mysql
