@@ -1,4 +1,4 @@
-# Copy this file a new file `config.yaml`.
+# Copy this file a new file `web-config.yaml`.
 #
 # `SUMA_SERVER_PATH` must be set to the `SUMA_SERVER_INSTALL_DIR`
 #  where the Suma server was installed earlier (e.g. `/var/www/app/sumaserver`).
