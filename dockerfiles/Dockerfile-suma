@@ -15,6 +15,7 @@ RUN phpenmod pdo_mysql
 # What's below follows the order of installation instructions at
 # https://suma-project.github.io/Suma/installation/#suma-install-instructions
 ADD Suma /var/www/app/sumaserver
+RUN cp -r /var/www/app/sumaserver/service/* /var/www/app/sumaserver
 RUN mkdir /var/www/html/suma
 RUN ln -s /var/www/app/sumaserver/web /var/www/html/suma/web
 RUN ln -s /var/www/app/sumaserver/analysis /var/www/html/suma/analysis
