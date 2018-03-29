@@ -14,28 +14,33 @@ RUN phpenmod pdo_mysql
 
 # What's below follows the order of installation instructions at
 # https://suma-project.github.io/Suma/installation/#suma-install-instructions
-ADD Suma /var/www/app/sumaserver
-RUN cp -r /var/www/app/sumaserver/service/* /var/www/app/sumaserver
+ADD Suma /var/www/app/suma
+
+# RUN cp -r /var/www/app/suma/service/* /var/www/app/suma
+# RUN cp -r /var/www/app/suma/service/web/* /var/www/html/sumaserver
+
 RUN mkdir /var/www/html/suma
-RUN ln -s /var/www/app/sumaserver/web /var/www/html/suma/web
-RUN ln -s /var/www/app/sumaserver/analysis /var/www/html/suma/analysis
-RUN ln -s /var/www/app/sumaserver/service/web /var/www/html/sumaserver
 
-COPY htaccess /var/www/html/sumaserver/.htaccess
+RUN ln -s /var/www/app/suma/service /var/www/app/sumaserver
+RUN ln -s /var/www/app/suma/service/web /var/www/html/sumaserver
+RUN ln -s /var/www/app/suma/web /var/www/html/suma/web
+RUN ln -s /var/www/app/suma/analysis /var/www/html/suma/analysis
 
-# Note that the documentation at 
-# https://suma-project.github.io/Suma/installation/#suma-server-software-configuration
-# is missing the /service/ part of this path.
-COPY ./config/web-config.yaml /var/www/app/sumaserver/service/web/config/config.yaml
+# COPY htaccess /var/www/html/sumaserver/.htaccess
 
 # Note that the documentation at 
 # https://suma-project.github.io/Suma/installation/#suma-server-software-configuration
 # is missing the /service/ part of this path.
-COPY ./config/server-config.yaml /var/www/app/sumaserver/service/config/config.yaml
+COPY ./config/web-config.yaml /var/www/app/suma/service/web/config/config.yaml
 
-COPY ./config/session.yaml /var/www/app/sumaserver/service/config/session.yaml
+# Note that the documentation at 
+# https://suma-project.github.io/Suma/installation/#suma-server-software-configuration
+# is missing the /service/ part of this path.
+COPY ./config/server-config.yaml /var/www/app/suma/service/config/config.yaml
 
-COPY ./config/spaceassessConfig.js /var/www/app/sumaserver/web/config/spaceassessConfig.js
+COPY ./config/session.yaml /var/www/app/suma/service/config/session.yaml
+
+COPY ./config/spaceassessConfig.js /var/www/app/suma/web/config/spaceassessConfig.js
 
 COPY ./config/analysis-config.yaml /var/www/html/suma/analysis/config/config.yaml
 
