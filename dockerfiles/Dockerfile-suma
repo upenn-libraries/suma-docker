@@ -21,7 +21,6 @@ ADD Suma /var/www/app/suma
 
 RUN mkdir /var/www/html/suma
 
-RUN ln -s /var/www/app/suma/service /var/www/app/sumaserver
 RUN ln -s /var/www/app/suma/service/web /var/www/html/sumaserver
 RUN ln -s /var/www/app/suma/web /var/www/html/suma/client
 RUN ln -s /var/www/app/suma/analysis /var/www/html/suma/analysis

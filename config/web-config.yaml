@@ -1,10 +1,10 @@
 # Copy this file a new file `web-config.yaml`.
 #
 # `SUMA_SERVER_PATH` must be set to the `SUMA_SERVER_INSTALL_DIR`
-#  where the Suma server was installed earlier (e.g. `/var/www/app/sumaserver`).
+#  where the Suma server was installed earlier (e.g. `/var/www/app/suma/service`).
 #
 # `SUMA_CONTROLLER_PATH` must be set to `SUMA_SERVER_INSTALL_DIR/controllers`
-#  (e.g. `/var/www/app/sumaserver/controllers`).
+#  (e.g. `/var/www/app/suma/service/controllers`).
 #
 # `SUMA_BASE_URL` must be set to the URL path for the Suma server.
 #  For example, if the URL is `http://YOUR_HOST/sumaserver`, set this to `/sumaserver`.
@@ -13,8 +13,8 @@
 #  to see more verbose error messages. This should generally be set to `false`.
 
 # Path Configuration
-SUMA_SERVER_PATH: /var/www/app/sumaserver
-SUMA_CONTROLLER_PATH: /var/www/app/sumaserver/controllers
+SUMA_SERVER_PATH: /var/www/app/suma/service
+SUMA_CONTROLLER_PATH: /var/www/app/suma/service/controllers
 SUMA_BASE_URL: /sumaserver
 
 # Debug mode
