@@ -18,4 +18,4 @@ SUMA_CONTROLLER_PATH: /var/www/app/suma/service/controllers
 SUMA_BASE_URL: /sumaserver
 
 # Debug mode
-SUMA_DEBUG: true
+SUMA_DEBUG: false

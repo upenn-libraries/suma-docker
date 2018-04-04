@@ -5,3 +5,5 @@ analysis-config.yaml
 mysql.env
 docker_backups
 .directory
+config/htpasswd_plaintext_passwords.txt
+config/htpasswd

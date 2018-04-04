@@ -16,16 +16,18 @@ RUN phpenmod pdo_mysql
 # https://suma-project.github.io/Suma/installation/#suma-install-instructions
 ADD Suma /var/www/app/suma
 
-# RUN cp -r /var/www/app/suma/service/* /var/www/app/suma
-# RUN cp -r /var/www/app/suma/service/web/* /var/www/html/sumaserver
-
-RUN mkdir /var/www/html/suma
+# RUN mkdir /var/www/html/suma
 
 RUN ln -s /var/www/app/suma/service/web /var/www/html/sumaserver
-RUN ln -s /var/www/app/suma/web /var/www/html/suma/client
-RUN ln -s /var/www/app/suma/analysis /var/www/html/suma/analysis
+
+RUN ln -s /var/www/app/suma/web /var/www/html/client
+# Changed from /var/www/html/suma/client
+
+RUN ln -s /var/www/app/suma/analysis /var/www/html/analysis
+# Changed from /var/www/html/suma/analysis
 
 # COPY htaccess /var/www/html/sumaserver/.htaccess
+COPY ./config/htpasswd /etc/apache2/.htpasswd
 
 # Note that the documentation at 
 # https://suma-project.github.io/Suma/installation/#suma-server-software-configuration
@@ -41,9 +43,12 @@ COPY ./config/session.yaml /var/www/app/suma/service/config/session.yaml
 
 COPY ./config/spaceassessConfig.js /var/www/app/suma/web/config/spaceassessConfig.js
 
-COPY ./config/analysis-config.yaml /var/www/html/suma/analysis/config/config.yaml
+COPY ./config/analysis-config.yaml /var/www/html/analysis/config/config.yaml  
+# Changed from /var/www/html/suma/analysis/config/config.yaml
 
 COPY ./config/apache-configuration.conf /etc/apache2/sites-enabled/000-default.conf
+
+COPY ./landing_page/ /var/www/html/
 
 # Note that a crontab can be set up at this point, following
 # https://suma-project.github.io/Suma/installation/#suma-analysis-tools-configuration,
