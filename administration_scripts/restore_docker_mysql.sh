@@ -5,6 +5,8 @@
 # Source: https://gitlab.library.upenn.edu/katherly/colenda_backup_scripts/blob/master/backup_mysql.sh, https://gitlab.library.upenn.edu/katherly/colenda_backup_scripts/blob/master/README.md
 # License: MIT
 
+# This script expects one argument: the backup SQL file to restore.
+
 #################################
 # Settings
 #################################
@@ -19,7 +21,7 @@ MYSQL_CONTAINER=suma_mysql  # Name of the MySQL Docker container. This is set us
 # MYSQL_DATABASE
 # MYSQL_USER
 # MYSQL_PASSWORD
-LOCATION_OF_ENV_FILE="./config/mysql_authentication_variables.env"
+LOCATION_OF_ENV_FILE="./config/mysql.env"
 source "$LOCATION_OF_ENV_FILE"
 
 #################################
@@ -34,4 +36,4 @@ mkdir -p "$locationForBackup"
 
 echo "Restoring MYSQL backup to container '$MYSQL_CONTAINER' from '$locationForBackup'..."
 
-cat "$locationForBackup"/backup.sql | docker exec -i $MYSQL_CONTAINER /usr/bin/mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE 
+cat "$1" | docker exec -i $MYSQL_CONTAINER /usr/bin/mysql -u $MYSQL_USER --password=$MYSQL_PASSWORD $MYSQL_DATABASE 
