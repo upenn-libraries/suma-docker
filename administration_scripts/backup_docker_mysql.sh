@@ -19,7 +19,7 @@ MYSQL_CONTAINER=suma_mysql  # Name of the MySQL Docker container. This is set us
 # MYSQL_DATABASE
 # MYSQL_USER
 # MYSQL_PASSWORD
-LOCATION_OF_ENV_FILE="./config/mysql_authentication_variables.env"
+LOCATION_OF_ENV_FILE="./config/mysql.env"
 source "$LOCATION_OF_ENV_FILE"
 
 #################################
