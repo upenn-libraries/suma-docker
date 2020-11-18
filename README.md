@@ -50,3 +50,5 @@ cat backup.sql | docker exec -i suma_mysql /usr/bin/mysql -u $MYSQL_USER --passw
 ## License
 
 The code in this repository is released under the [MIT License](LICENSE.md).
+
+This project is a fork of [https://github.com/publicus/suma-docker](https://github.com/publicus/suma-docker)
